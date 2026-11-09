@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Natal Solidário de Queimadas - PB: Desde 2009 transformando o Natal de famílias carentes no Castanho e comunidades rurais com cestas básicas, brinquedos, lazer e dignidade.">
+  <meta name="keywords" content="Natal Solidário, Queimadas PB, Castanho, Solidariedade, Doação Cesta Básica, Mércia Ramos, José Joaquim Vieira">
+  <meta name="author" content="Projeto Natal Solidário de Queimadas">
+  
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Natal Solidário de Queimadas - PB | Amor, Dignidade e Esperança">
+  <meta property="og:description" content="Faça parte dessa corrente do bem! Conheça a história iniciada em 2009 que beneficia mais de 10 comunidades com cestas básicas, brinquedos e alegria natalina.">
+  <meta property="og:image" content="docs/logo-natal-solidario.jpeg">
+  
+  <title>Natal Solidário de Queimadas - PB | Transformando Vidas no Natal</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpeg" href="docs/logo-natal-solidario.jpeg">
+</head>
+<body>
+
+  <!-- Efeito de Neve Natalina em Canvas -->
+  <canvas id="snow-canvas" aria-hidden="true"></canvas>
+
+  <!-- Barra de Notificação Superior com Espírito Natalino -->
+  <aside class="announcement-bar" role="complementary">
+    <div class="container announcement-content">
+      <span class="announcement-badge">🎄 Edição de Natal</span>
+      <p>As arrecadações para o <strong>Natal Solidário</strong> estão abertas! Sua doação leva comida à mesa e sorrisos às crianças.</p>
+      <a href="#como-doar" class="announcement-link">Doar Agora &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Cabeçalho Principal e Navegação -->
+  <header class="main-header" id="topo">
+    <div class="container header-container">
+      <a href="#topo" class="brand" aria-label="Natal Solidário Queimadas - Página Inicial">
+        <img src="docs/logo-natal-solidario.jpeg" alt="Logo Natal Solidário Queimadas" class="brand-logo">
+        <div class="brand-info">
+          <span class="brand-title">Natal Solidário</span>
+          <span class="brand-subtitle">Queimadas &bull; Paraíba</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Desktop -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li><a href="#historia" class="nav-link">Nossa História</a></li>
+          <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+          <li><a href="#comunidades" class="nav-link">Comunidades</a></li>
+          <li><a href="#galeria" class="nav-link">Galeria & Feitos</a></li>
+          <li><a href="#impacto" class="nav-link">Calculadora</a></li>
+          <li><a href="#como-doar" class="nav-link">Como Doar</a></li>
+          <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+          <li class="nav-mobile-cta">
+            <a href="#como-doar" class="btn btn-primary btn-block">
+              <span class="heart-icon">❤️</span> Doar Agora
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Alternador de Neve -->
+        <button id="toggle-snow-btn" class="icon-btn" title="Ativar/Desativar Neve" aria-label="Alternar Neve Natalina">
+          <span class="btn-icon">❄️</span>
+          <span class="btn-text">Neve</span>
+        </button>
+
+        <a href="#como-doar" class="btn btn-primary btn-pulse">
+          <span class="heart-icon">❤️</span> Doar Agora
+        </a>
+
+        <!-- Botão Menu Mobile -->
+        <button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Backdrop para Fechamento do Menu Mobile -->
+  <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+  <main>
+    <!-- Seção Hero / Boas-Vindas com Temática Natalina Forte -->
+    <section class="hero-section" id="hero">
+      <div class="hero-decorations" aria-hidden="true">
+        <div class="ornament ornament-1">🌟</div>
+        <div class="ornament ornament-2">🔔</div>
+        <div class="ornament ornament-3">🎁</div>
+        <div class="ornament ornament-4">✨</div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="tag-icon">✨</span>
+            <span>Ação Comunitária Anual em Queimadas - PB</span>
+          </div>
+          <h1 class="hero-title">
+            Onde a solidariedade <br>
+            <span class="text-gold">ilumina o Natal</span> de quem mais precisa
+          </h1>
+          <p class="hero-description">
+            Desde 2009, transformamos a ceia e o sorriso de centenas de famílias no 
+            <strong>Castanho</strong> e em mais de <strong>10 comunidades rurais</strong> com cestas básicas fartas, 
+            brinquedos, recreação mágica com o Papai Noel e acolhimento humano verdadeiro.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#como-doar" class="btn btn-primary btn-lg">
+              <span>Fazer Minha Doação</span>
+              <span class="arrow">&rarr;</span>
+            </a>
+            <a href="#historia" class="btn btn-secondary btn-lg">
+              <span>Conhecer Nossa História</span>
+            </a>
+          </div>
+
+          <!-- Métricas e Conquistas Rápidas -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">+15</span>
+              <span class="stat-label">Anos de dedicação e história contínua</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">Comunidades rurais e vilas atendidas</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Destinação transparente às famílias</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img src="docs/natal-solidario-2022-ambiente-tematico-papai-noel.png" 
+                 alt="Cenário Temático de Natal Solidário no Castanho com Papai Noel e voluntários" 
+                 class="hero-img">
+            <div class="hero-badge">
+              <span class="badge-icon">🎅</span>
+              <div>
+                <strong>Alegria no Castanho</strong>
+                <small>Festa Comunitária Anual</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Chamada de Doação Rápida / Chave PIX em Destaque -->
+    <section class="quick-pix-section">
+      <div class="container">
+        <div class="quick-pix-card">
+          <div class="quick-pix-text">
+            <div class="pix-tag">⚡ Doação Rápida via PIX</div>
+            <h3>Qualquer quantia faz uma mesa mais farta</h3>
+            <p>Os recursos financeiros são usados na compra de brinquedos para as crianças, aluguel de brinquedos infláveis, doces e complementação das cestas básicas.</p>
+          </div>
+          <div class="quick-pix-action">
+            <div class="pix-key-box">
+              <span class="pix-label">Chave PIX (Telefone - Mércia Ramos):</span>
+              <div class="pix-copy-wrapper">
+                <input type="text" readonly value="83993744640" id="quick-pix-input" class="pix-input" aria-label="Chave PIX Mércia Ramos">
+                <button class="btn btn-copy" data-copy-target="quick-pix-input" aria-label="Copiar Chave PIX">
+                  <span class="copy-text">Copiar Chave</span>
+                </button>
+              </div>
+            </div>
+            <span class="pix-help">Pague com qualquer banco pelo seu aplicativo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Nossa História & Origens -->
+    <section class="section section-history" id="historia">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Herança de Amor ao Próximo</span>
+          <h2 class="section-title">A História de um Movimento que Nunca se Apagou</h2>
+          <div class="section-divider">
+            <span>🎁</span>
+          </div>
+          <p class="section-subtitle">
+            Conheça como a semente plantada por um servidor da Emater se transformou no maior abraço solidário de Queimadas.
+          </p>
+        </div>
+
+        <!-- Linha do Tempo Visual -->
+        <div class="timeline">
+          <!-- Item 1: 2006 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">2006</div>
+            <div class="timeline-content">
+              <span class="timeline-year-tag">A Semente Inicial</span>
+              <h3>O 'Natal sem Fome' em Queimadas</h3>
+              <p>
+                Em 2006, o <strong>Conselho de Desenvolvimento Rural</strong> e o <strong>Sindicato dos Trabalhadores Rurais de Queimadas</strong> 
+                iniciaram uma campanha solidária batizada de <em>Natal sem Fome</em>. Apesar da grande relevância social, a ação não teve 
+                continuidade institucional nos anos seguintes. Contudo, aquele ideal de solidariedade marcou profundamente o coração de 
+                <strong>José Joaquim Vieira</strong>, funcionário dedicado da Emater.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: 2009 -->
+          <div class="timeline-item highlight-item">
+            <div class="timeline-dot">2009</div>
+            <div class="timeline-content">
+              <span class="timeline-year-tag">O Renascimento Familiar</span>
+              <h3>O Nascimento do 'Natal Solidário' no Castanho</h3>
+              <p>
+                Inquieto diante da extrema vulnerabilidade que testemunhava diariamente no campo e na comunidade do <strong>Castanho</strong>, 
+                o Sr. <strong>José Joaquim Vieira</strong> conversou com sua filha que crescera acompanhando seus passos, <strong>Mércia Ramos</strong>. 
+                Com amor e coragem, ele incentivou Mércia a resgatar e assumir a liderança da causa. Assim, em 2009, nascia oficialmente o 
+                <strong>Natal Solidário</strong>, com foco nas pessoas em maior privação do Castanho.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3: 2011 -->
+          <div class="timeline-item">
+            <div class="timeline-dot">2011</div>
+            <div class="timeline-content">
+              <span class="timeline-year-tag">Crescimento Comunitário</span>
+              <h3>A Expansão para Comunidades Vizinhas</h3>
+              <p>
+                A necessidade do povo clamava por socorro em várias localidades ao redor. Diante de tantos pedidos e do aumento de colaboradores, 
+                em 2011 o projeto rompeu os limites do Castanho e passou a acolher famílias de sítios e vilas vizinhas, construindo uma 
+                rede de solidariedade que só cresceu ano após ano.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4: Dias de Hoje -->
+          <div class="timeline-item highlight-item">
+            <div class="timeline-dot">HOJE</div>
+            <div class="timeline-content">
+              <span class="timeline-year-tag">Tradição Viva</span>
+              <h3>Mais de 10 Comunidades Acolhidas Todos os Anos</h3>
+              <p>
+                Hoje, com o respaldo de comerciantes locais, rifas organizadas com dedicação, fundo próprio dos fundadores e a cobertura 
+                histórica de veículos de comunicação como o canal <strong>Queimadas Acontece</strong>, o Natal Solidário tornou-se um 
+                marco de esperança, fraternidade e dignidade humana em toda Queimadas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destaque para os Fundadores -->
+        <div class="founders-showcase">
+          <div class="founder-card">
+            <div class="founder-image-wrapper">
+              <img src="docs/natal-solidario-2024-jose-joaquim-vieira-pai-da-organizadora-chefe-mercia.png" 
+                   alt="Sr. José Joaquim Vieira, idealizador do movimento e ex-EMATER" 
+                   class="founder-img founder-img-jose">
+              <span class="founder-tag">Idealizador & Precursor</span>
+            </div>
+            <div class="founder-info">
+              <h3>José Joaquim Vieira</h3>
+              <span class="founder-role">Ex-servidor da EMATER & Patriarca da Solidariedade</span>
+              <p>
+                Com sua experiência e olhar atento às necessidades do homem do campo em Queimadas, o Sr. José Joaquim 
+                acendeu a chama solidária em 2006 e confiou a continuidade desse sonho à filha Mércia Ramos, permanecendo 
+                como conselheiro e presença calorosa em todas as edições.
+              </p>
+            </div>
+          </div>
+
+          <div class="founder-card">
+            <div class="founder-image-wrapper">
+              <img src="docs/mercia-foto-perfil-boa.jpeg" 
+                   alt="Mércia Ramos, coordenadora geral e líder do Natal Solidário de Queimadas" 
+                   class="founder-img founder-img-mercia">
+              <span class="founder-tag">Organizadora Chefe & Líder</span>
+            </div>
+            <div class="founder-info">
+              <h3>Mércia Ramos</h3>
+              <span class="founder-role">Coordenadora Geral do Natal Solidário</span>
+              <p>
+                Desde 2009 à frente da mobilização, Mércia visita as casas, conversa olho no olho com as famílias, 
+                gerencia as arrecadações, presta contas de cada item doado e não mede esforços para que nenhuma criança 
+                ou idoso fique sem o abraço caloroso do Natal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seção: Como Funciona / Transparência e Critérios -->
+    <section class="section section-process" id="como-funciona">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Critério, Respeito e Responsabilidade</span>
+          <h2 class="section-title">Como a Solidariedade Acontece na Prática</h2>
+          <div class="section-divider">
+            <span>⚖️</span>
+          </div>
+          <p class="section-subtitle">
+            Nenhuma doação é desperdiçada. Conheça as etapas rigorosas pelas quais cada família é ouvida, avaliada e acolhida.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <!-- Etapa 1 -->
+          <div class="process-card">
+            <div class="process-icon-wrap">
+              <span class="process-step">1</span>
+              <span class="process-emoji">📋</span>
+            </div>
+            <h3>Formulário de Cadastro</h3>
+            <p>
+              É realizado o levantamento prévio onde os voluntários preenchem o nome completo, contato e endereço das famílias 
+              que solicitam ou precisam de auxílio em cada localidade.
+            </p>
+          </div>
+
+          <!-- Etapa 2 -->
+          <div class="process-card highlight-card">
+            <div class="process-icon-wrap">
+              <span class="process-step">2</span>
+              <span class="process-emoji">🏡</span>
+            </div>
+            <h3>Avaliação Social Real</h3>
+            <p>
+              Os organizadores vão a campo: escutam as histórias, visitam as moradias e verificam o número de filhos, condições 
+              de vulnerabilidade e urgência de cada lar para assegurar que a ajuda chegue a quem realmente precisa.
+            </p>
+          </div>
+
+          <!-- Etapa 3 -->
+          <div class="process-card">
+            <div class="process-icon-wrap">
+              <span class="process-step">3</span>
+              <span class="process-emoji">📦</span>
+            </div>
+            <h3>Arrecadação de Alimentos</h3>
+            <p>
+              Alimentos não perecíveis doados por moradores e comerciantes são conferidos e cuidadosamente montados em cestas básicas 
+              completas e fartas, capazes de alimentar a família com dignidade.
+            </p>
+          </div>
+
+          <!-- Etapa 4 -->
+          <div class="process-card">
+            <div class="process-icon-wrap">
+              <span class="process-step">4</span>
+              <span class="process-emoji">🎟️</span>
+            </div>
+            <h3>Rifas, Patrocínios & Fundo Próprio</h3>
+            <p>
+              O que falta é complementado com rifas solidárias, apoio de comerciantes e recursos próprios dos organizadores, garantindo 
+              que todas as famílias cadastradas sejam plenamente atendidas.
+            </p>
+          </div>
+
+          <!-- Etapa 5 -->
+          <div class="process-card">
+            <div class="process-icon-wrap">
+              <span class="process-step">5</span>
+              <span class="process-emoji">🎡</span>
+            </div>
+            <h3>Lazer Infantil & Alegria</h3>
+            <p>
+              Os valores arrecadados em dinheiro financiam o aluguel de brinquedos (pula-pula, escorregadores, piscina de bolinhas), 
+              algodão doce e compra de brinquedos sorteados e distribuídos com a presença mágica do Papai Noel.
+            </p>
+          </div>
+
+          <!-- Etapa 6 -->
+          <div class="process-card highlight-card">
+            <div class="process-icon-wrap">
+              <span class="process-step">6</span>
+              <span class="process-emoji">🎁</span>
+            </div>
+            <h3>Sorteio de Eletrodomésticos</h3>
+            <p>
+              Quando a arrecadação financeira é expressiva, o projeto realiza sorteios de itens essenciais como 
+              <strong>fogões novos e geladeiras</strong> para famílias em situação de extrema carência estrutural.
+            </p>
+          </div>
+        </div>
+
+        <!-- Banner de Transparência -->
+        <div class="transparency-callout">
+          <div class="transparency-icon">✨</div>
+          <div class="transparency-text">
+            <h4>Cobertura Pública e Prestação de Contas</h4>
+            <p>
+              O canal <strong>Queimadas Acontece</strong> e lideranças locais acompanham e documentam as edições do evento, 
+              registrando as entregas, os depoimentos emocionados dos beneficiados e o sorriso das crianças.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seção: Regiões Beneficiadas -->
+    <section class="section section-regions" id="comunidades">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Nosso Campo de Atuação</span>
+          <h2 class="section-title">Comunidades Atendidas em Queimadas</h2>
+          <div class="section-divider">
+            <span>🗺️</span>
+          </div>
+          <p class="section-subtitle">
+            A solidariedade percorre o município de ponta a ponta, alcançando o sertão e as comunidades que mais carecem de amparo.
+          </p>
+        </div>
+
+        <div class="regions-grid">
+          <!-- Castanho -->
+          <div class="region-card main-region">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+              <span class="region-badge">Berço do Projeto</span>
+            </div>
+            <h3>Castanho</h3>
+            <span class="region-sub">(Cima e Baixo)</span>
+            <p>O coração do movimento solidário, onde tudo começou em 2009 e onde acontece a tradicional festa com brinquedos e distribuição de cestas.</p>
+          </div>
+
+          <!-- Cássio -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Cássio</h3>
+            <span class="region-sub">Comunidade Rural</span>
+            <p>Famílias acolhidas anualmente com apoio na alimentação e brinquedos natalinos para as crianças.</p>
+          </div>
+
+          <!-- Guritiba -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Guritiba</h3>
+            <span class="region-sub">Comunidade Rural</span>
+            <p>Apoio contínuo às famílias cadastradas que enfrentam períodos de estiagem e dificuldades de renda.</p>
+          </div>
+
+          <!-- Zé Velho -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Zé Velho</h3>
+            <span class="region-sub">Região Rural</span>
+            <p>Mapeamento das casas de idosos e famílias numerosas para entrega domiciliar e no evento central.</p>
+          </div>
+
+          <!-- Vila -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Vila</h3>
+            <span class="region-sub">Núcleo Comunitário</span>
+            <p>Mobilização de famílias e crianças para participarem do dia festivo com alimentação e brindes.</p>
+          </div>
+
+          <!-- Zumbi -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Zumbi</h3>
+            <span class="region-sub">Comunidade Quilombola / Rural</span>
+            <p>Levantamento de famílias em alta vulnerabilidade alimentar para fornecimento de cestas básicas fartas.</p>
+          </div>
+
+          <!-- Baixa Verde -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Baixa Verde</h3>
+            <span class="region-sub">Região Rural</span>
+            <p>Comunidade parceira com ampla participação nas edições e recepção de mantimentos essenciais.</p>
+          </div>
+
+          <!-- Pedra do Sino -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Pedra do Sino</h3>
+            <span class="region-sub">Região Rural</span>
+            <p>Presença marcante da ação social garantindo brinquedos e presentes a quem raramente teria acesso.</p>
+          </div>
+
+          <!-- Sítio Lutador -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Sítio Lutador</h3>
+            <span class="region-sub">Área Rural</span>
+            <p>Atendimento a trabalhadores do campo e seus dependentes com cestas nutricionais de qualidade.</p>
+          </div>
+
+          <!-- Sítio Malhada -->
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-pin">📍</span>
+            </div>
+            <h3>Sítio Malhada</h3>
+            <span class="region-sub">Área Rural</span>
+            <p>Apoio aos moradores mais isolados com transporte e inclusão na celebração de fim de ano.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Galeria de Fotos e Feitos (Com Filtro e Lightbox) -->
+    <section class="section section-gallery" id="galeria">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Registros Reais da Nossa Trajetória</span>
+          <h2 class="section-title">Momentos que Ficaram Marcados na Memória</h2>
+          <div class="section-divider">
+            <span>📸</span>
+          </div>
+          <p class="section-subtitle">
+            Cada fotografia conta a história de um olhar de alívio, de uma gargalhada infantil e do poder transformador da união comunitária.
+          </p>
+        </div>
+
+        <!-- Filtros da Galeria -->
+        <div class="gallery-filters" role="tablist" aria-label="Filtrar fotos por categoria">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos os Momentos</button>
+          <button class="filter-btn" data-filter="2024" role="tab" aria-selected="false">Edição 2024</button>
+          <button class="filter-btn" data-filter="2022" role="tab" aria-selected="false">Edição 2022</button>
+          <button class="filter-btn" data-filter="2015" role="tab" aria-selected="false">Edição 2015</button>
+          <button class="filter-btn" data-filter="cestas" role="tab" aria-selected="false">Cestas Básicas</button>
+          <button class="filter-btn" data-filter="criancas" role="tab" aria-selected="false">Alegria Infantil & Papai Noel</button>
+          <button class="filter-btn" data-filter="sorteios" role="tab" aria-selected="false">Sorteios Especiais</button>
+        </div>
+
+        <!-- Grade de Fotos com atributos para Lightbox -->
+        <div class="gallery-grid" id="gallery-grid">
+          
+          <!-- Foto: Entrega de Fogão 2015 -->
+          <div class="gallery-item" data-category="2015 sorteios" data-year="2015">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2015-familia-carente-beneficiada-com-fogao.png" 
+                   alt="Família carente no Castanho beneficiada com fogão novo no Natal Solidário 2015" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Sorteio de Eletrodoméstico</span>
+                <h4>Dignidade Além do Alimento</h4>
+                <p>Família beneficiada com um fogão novo de 4 bocas, fruto do superávit de arrecadações e rifas em 2015.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Papai Noel de Bicicleta com Som 2015 -->
+          <div class="gallery-item" data-category="2015 criancas" data-year="2015">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2015-papai-noel-na-bicicleta-com-som.png" 
+                   alt="Papai Noel do Natal Solidário chegando na bicicleta com caixa de som e presentes" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Espírito Natalino</span>
+                <h4>Papai Noel na Bicicleta com Som</h4>
+                <p>A chegada mágica e humilde do Bom Velhinho anunciando a celebração pelo bairro do Castanho em 2015.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Papai Noel abraçando crianças 2015 -->
+          <div class="gallery-item" data-category="2015 criancas" data-year="2015">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2015-papai-noel-abrancando-criancas.png" 
+                   alt="Papai Noel abraçando as crianças carinhosamente no Natal Solidário 2015" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Carinho & Acolhimento</span>
+                <h4>O Abraço do Papai Noel</h4>
+                <p>Momentos inesquecíveis que enchem de brilho os olhos dos pequenos das comunidades rurais.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Cestas Montadas 2015 -->
+          <div class="gallery-item" data-category="2015 cestas" data-year="2015">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2015-cestas-basicas-montadas.png" 
+                   alt="Cestas básicas fartas montadas em caixas de papelão prontas para entrega às famílias" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Cestas Básicas</span>
+                <h4>Centenas de Cestas Montadas</h4>
+                <p>Arrecadações organizadas minuciosamente em caixas com mantimentos completos para o mês festivo.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia entregando cesta básica 2015 -->
+          <div class="gallery-item" data-category="2015 cestas" data-year="2015">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2015-organizadora-chefe-mercia-entregando-cesta-basica1.png" 
+                   alt="Mércia Ramos entregando cesta básica nas mãos de uma moradora beneficiada em 2015" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Entrega Direta</span>
+                <h4>Mércia Ramos Entregando a Cesta</h4>
+                <p>A coordenadora chefe entregando diretamente aos moradores cadastrados, com respeito e afeição.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Brindes sorteados 2015 -->
+          <div class="gallery-item" data-category="2015 sorteios" data-year="2015">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2015-brindes-aos-colaboradores-do-evento-tais-brindes-sao-sorteados.png" 
+                   alt="Brindes, presentes e utilidades sorteados durante o evento em 2015" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Sorteios Comunitários</span>
+                <h4>Mesa de Brindes Sorteados</h4>
+                <p>Presentes e utensílios adquiridos com apoio de patrocinadores e rifas para agraciar os participantes.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Chamada dos Beneficiados 2015 -->
+          <div class="gallery-item" data-category="2015 cestas" data-year="2015">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2015-organizador-chamando-beneficiados-para-cestas-basicas.png" 
+                   alt="Organizador com microfone chamando famílias cadastradas para retirar suas cestas em 2015" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Organização & Ordem</span>
+                <h4>Chamada Pública dos Beneficiados</h4>
+                <p>Processo transparente e organizado em que cada família cadastrada no formulário é chamada pelo nome.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Pula-pula e escorregas 2022 -->
+          <div class="gallery-item" data-category="2022 criancas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-ambiente-com-pula-pula-escorregas-para-criancas-durante-evento-cheio-com-muitas-pessoas.png" 
+                   alt="Evento lotado no Castanho com brinquedos infláveis, escorregadores e pula-pula para as crianças em 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">15ª Edição (2022)</span>
+                <h4>Parque Inflável & Recreação</h4>
+                <p>Aluguel de estrutura de lazer completa: pula-pula e escorregadores gigantes para as crianças da comunidade.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Famílias recebendo cestas 2022 -->
+          <div class="gallery-item" data-category="2022 cestas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-familias-carentes-recebendo-cestas-basicas.png" 
+                   alt="Centenas de moradores reunidos no Castanho recebendo suas cestas de Natal em 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Comunidade Reunida</span>
+                <h4>Centenas de Famílias Atendidas</h4>
+                <p>Um dia de muita emoção e confraternização marcando a 15ª edição do movimento no Castanho.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Brinquedos 2022 -->
+          <div class="gallery-item" data-category="2022 criancas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-ambiente-com-brinquedos-para-criancas.png" 
+                   alt="Área de brinquedos e recreação infantil no Natal Solidário 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Espaço das Crianças</span>
+                <h4>Brinquedos & Felicidade</h4>
+                <p>Espaço planejado para que a infância dos pequenos em situação de carência seja celebrada com magia.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia entregando cestas 2022 (série) -->
+          <div class="gallery-item" data-category="2022 cestas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-organizadora-chefe-entregando-cestas-basicas-4.png" 
+                   alt="Mércia Ramos entregando cesta básica a mais uma família beneficiada em 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">15ª Edição</span>
+                <h4>Entrega com Amor e Dignidade</h4>
+                <p>Cada cesta básica entregue renova as esperanças de um Natal com alimento e paz na mesa.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Piscina de Bolinhas 2024 -->
+          <div class="gallery-item" data-category="2024 criancas" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-ambiente-criancas-brincando-pscina-de-bolinhas-pequena.png" 
+                   alt="Crianças brincando felizes na piscina de bolinhas na edição 2024 do Natal Solidário" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Edição 2024</span>
+                <h4>Piscina de Bolinhas para a Garotada</h4>
+                <p>Sorrisos sinceros e brincadeiras para a garotada na edição mais recente da celebração natalina.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Fila do Algodão Doce 2024 -->
+          <div class="gallery-item" data-category="2024 criancas" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-fila-algodao-doce.png" 
+                   alt="Fila de crianças ansiosas recebendo algodão doce de graça no evento de 2024" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Doçura no Natal</span>
+                <h4>Fila do Algodão Doce Gratuito</h4>
+                <p>Distribuição livre de algodão doce e guloseimas para alegrar a tarde da garotada de Queimadas.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Fila dos Brinquedos 2024 -->
+          <div class="gallery-item" data-category="2024 criancas" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-ambiente-fila-criancas-para-brinquedo.png" 
+                   alt="Fila organizada de crianças aguardando para brincar no Natal Solidário 2024" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Diversão Garantida</span>
+                <h4>Fila para os Brinquedos</h4>
+                <p>A garotada aguarda com entusiasmo e ordem para curtir as atrações exclusivas do dia solidário.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Cestas Básicas 2024 -->
+          <div class="gallery-item" data-category="2024 cestas" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-cestas-basicas-feitas-com-arrecadacoes.png" 
+                   alt="Cestas básicas completas arrecadadas para a edição de 2024 em Queimadas" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Alimento na Mesa</span>
+                <h4>Cestas Montadas com Arrecadações</h4>
+                <p>O resultado do empenho e da solidariedade dos moradores de Queimadas e apoiadores em 2024.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Multidão no Evento 2024 -->
+          <div class="gallery-item" data-category="2024" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-ambiente-muitas-pessoas-no-evento.png" 
+                   alt="Grande público e famílias reunidas na edição 2024 do Natal Solidário" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Força Comunitária</span>
+                <h4>Comunidade em Peso</h4>
+                <p>Centenas de pessoas unidas em uma tarde de festa, esperança e partilha comunitária.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia Ramos Entrevista 2024 -->
+          <div class="gallery-item" data-category="2024" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-organizadora-mercia-dando-entrevista.png" 
+                   alt="Mércia Ramos concedendo entrevista para o canal Queimadas Acontece no evento de 2024" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Cobertura 2024</span>
+                <h4>Mércia Ramos em Entrevista</h4>
+                <p>Relatando o impacto social e a emoção de cada edição para a reportagem do Queimadas Acontece.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: José Joaquim com a equipe 2024 -->
+          <div class="gallery-item" data-category="2024" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-jose-joaquim-com-pessoal.png" 
+                   alt="José Joaquim Vieira com a equipe de voluntários e comunidade no Natal Solidário 2024" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">União & Amizade</span>
+                <h4>Sr. José Joaquim com os Voluntários</h4>
+                <p>O pioneiro ao lado da comunidade e de amigos que fazem a magia acontecer ano após ano.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Ambiente Cheio de Pessoas e Brinquedos 2024 -->
+          <div class="gallery-item" data-category="2024 criancas" data-year="2024">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2024-ambiente-cheio-pessoas-e-brinquedos.png" 
+                   alt="Ambiente lotado de pessoas e brinquedos infantis no Natal Solidário 2024" 
+                   class="gallery-thumb gallery-thumb-vertical">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Edição 2024</span>
+                <h4>Festa Lotada & Brinquedos</h4>
+                <p>O espaço comunitário repleto de crianças felizes e famílias reunidas na edição mais recente.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia Ramos entregando com Cestas Básicas 2022 (Série 1) -->
+          <div class="gallery-item" data-category="2022 cestas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-organizadora-chefe-entregando-com-cestas-basicas.png" 
+                   alt="Mércia Ramos e organizadores entregando cestas básicas aos beneficiados em 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Cestas Básicas</span>
+                <h4>Entrega com Mércia Ramos (2022)</h4>
+                <p>O carinho no momento da entrega das cestas arrecadadas para os moradores cadastrados no Castanho.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia Ramos entregando com Cestas Básicas 2022 (Série 2) -->
+          <div class="gallery-item" data-category="2022 cestas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-organizadora-chefe-entregando-com-cestas-basicas-2.png" 
+                   alt="Moradora recebendo cesta de alimentos das mãos de Mércia Ramos em 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Acolhimento Familiar</span>
+                <h4>Alimento na Mesa da Comunidade</h4>
+                <p>Garantindo que cada mãe e pai de família leve dignidade e fartura para a ceia natalina de seus filhos.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia Ramos entregando com Cestas Básicas 2022 (Série 3) -->
+          <div class="gallery-item" data-category="2022 cestas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-organizadora-chefe-entregando-com-cestas-basicas-3.png" 
+                   alt="Voluntários e Mércia Ramos acolhendo famílias durante entrega de cestas em 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Solidariedade Viva</span>
+                <h4>Dedicação de Coração</h4>
+                <p>O trabalho voluntário incansável que torna possível cada pacote de alimento distribuído.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia Ramos entregando com Cestas Básicas 2022 (Série 5) -->
+          <div class="gallery-item" data-category="2022 cestas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-organizadora-chefe-entregando-com-cestas-basicas-5.png" 
+                   alt="Entrega contínua de mantimentos para as famílias no Castanho 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">15ª Edição</span>
+                <h4>Esperança que Alimenta</h4>
+                <p>A força da união comunitária e o compromisso voluntário com as famílias cadastradas.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foto: Mércia Ramos entregando com Cestas Básicas 2022 (Série 6) -->
+          <div class="gallery-item" data-category="2022 cestas" data-year="2022">
+            <div class="gallery-card">
+              <img src="docs/natal-solidario-2022-organizadora-chefe-entregando-com-cestas-basicas-6.png" 
+                   alt="Agradecimento e entrega de cesta básica no Natal Solidário 2022" 
+                   class="gallery-thumb">
+              <div class="gallery-overlay">
+                <span class="gallery-tag">Vidas Transformadas</span>
+                <h4>O Impacto que Permanece</h4>
+                <p>Mais uma família beneficiada, encerrando o ano com gratidão e alimentos essenciais para seus lares.</p>
+                <button class="btn-zoom" aria-label="Ampliar imagem">🔍 Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modal de Visualização de Imagem em Tela Cheia (Lightbox) -->
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Fechar visualização">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
+        <div class="lightbox-image-container">
+          <img src="" alt="" id="lightbox-img" class="lightbox-img">
+          <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Próxima imagem">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- Seção Interativa: Calculadora de Impacto Solidário -->
+    <section class="section section-impact" id="impacto">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Simulador Interativo</span>
+          <h2 class="section-title">Veja Como Sua Contribuição se Transforma em Amor</h2>
+          <div class="section-divider">
+            <span>✨</span>
+          </div>
+          <p class="section-subtitle">
+            Selecione ou digite um valor para ver o impacto direto que a sua doação gera na vida das crianças e famílias do Castanho.
+          </p>
+        </div>
+
+        <div class="impact-calculator-wrapper">
+          <div class="calculator-controls">
+            <span class="control-label">Escolha um valor ou digite o seu:</span>
+            <div class="preset-buttons" role="group" aria-label="Valores predefinidos de doação">
+              <button class="preset-btn" data-amount="30">R$ 30</button>
+              <button class="preset-btn active" data-amount="60">R$ 60</button>
+              <button class="preset-btn" data-amount="100">R$ 100</button>
+              <button class="preset-btn" data-amount="200">R$ 200</button>
+              <button class="preset-btn" data-amount="500">R$ 500</button>
+            </div>
+
+            <div class="custom-amount-input">
+              <label for="custom-donation-amount">Outro valor:</label>
+              <div class="input-currency-wrapper">
+                <span class="currency-prefix">R$</span>
+                <input type="number" id="custom-donation-amount" value="60" min="5" max="10000" step="5" aria-label="Valor de doação em reais">
+              </div>
+            </div>
+
+            <a href="#como-doar" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+              Doar Este Valor via PIX
+            </a>
+          </div>
+
+          <!-- Resultados do Impacto -->
+          <div class="calculator-results">
+            <div class="impact-badge-header">
+              <span class="impact-badge-tag">Impacto Estimado</span>
+              <h3 id="impact-display-title">Com R$ 60,00 você proporciona:</h3>
+            </div>
+
+            <div class="impact-metrics-grid">
+              <div class="impact-metric-item">
+                <span class="metric-icon">🎁</span>
+                <div class="metric-content">
+                  <strong id="impact-toys-count">2 Brinquedos</strong>
+                  <small>Comprados para o sorteio das crianças das comunidades rurais.</small>
+                </div>
+              </div>
+
+              <div class="impact-metric-item">
+                <span class="metric-icon">🍭</span>
+                <div class="metric-content">
+                  <strong id="impact-sweets-count">Algodão Doce & Brincadeiras</strong>
+                  <small>Garante acesso gratuito aos brinquedos infláveis e doces.</small>
+                </div>
+              </div>
+
+              <div class="impact-metric-item">
+                <span class="metric-icon">🍚</span>
+                <div class="metric-content">
+                  <strong id="impact-meals-count">Apoio a Cestas Básicas</strong>
+                  <small>Contribui para feijão, arroz, açúcar, leite e farinha na mesa.</small>
+                </div>
+              </div>
+
+              <div class="impact-metric-item">
+                <span class="metric-icon">❤️</span>
+                <div class="metric-content">
+                  <strong>Dignidade e Sorrisos</strong>
+                  <small>Mostra a uma família que ela não está esquecida no Natal.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-note">
+              <p>💡 <em>100% dos recursos são revertidos diretamente para a compra de brinquedos, lazer infantil, rifas e montagem das cestas básicas para as mais de 10 comunidades atendidas.</em></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seção Principal de Doação: Como Doar -->
+    <section class="section section-donation" id="como-doar">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Faça a Diferença Hoje</span>
+          <h2 class="section-title">Canais de Doação & Como Você Pode Ajudar</h2>
+          <div class="section-divider">
+            <span>🎁</span>
+          </div>
+          <p class="section-subtitle">
+            Você pode contribuir financeiramente via PIX de qualquer lugar do Brasil, doar alimentos não perecíveis em Queimadas ou ser voluntário!
+          </p>
+        </div>
+
+        <div class="donation-options-grid">
+          
+          <!-- Opção 1: Doação via PIX (Destaque) -->
+          <div class="donation-card featured-donation-card">
+            <div class="card-ribbon">Mais Rápido & Prático</div>
+            <div class="donation-icon">💳</div>
+            <h3>Doação Financeira via PIX</h3>
+            <p>Usado para aluguel de brinquedos infláveis, compra de brinquedos das crianças, doces e complementação de cestas.</p>
+
+            <div class="pix-card-content">
+              <div class="pix-data-list">
+                <div class="pix-data-item">
+                  <span class="data-title">Chave PIX (Telefone / Celular - Copie e Cole):</span>
+                  <div class="pix-key-wrapper">
+                    <input type="text" readonly value="83993744640" id="pix-key-input" class="pix-key-field" aria-label="Chave PIX telefone Mércia Ramos">
+                    <button class="btn btn-copy" data-copy-target="pix-key-input">
+                      <span>Copiar Chave</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="pix-data-item">
+                  <span class="data-title">Favorecida (Titular):</span>
+                  <strong>Mércia Ramos</strong>
+                  <span class="pix-phone-formatted">Número: (83) 99374-4640</span>
+                </div>
+
+                <div class="pix-instructions">
+                  <p>💡 <strong>Como doar:</strong> Copie o número acima e cole na opção <em>PIX Telefone</em> ou <em>PIX Copia e Cola</em> no aplicativo de qualquer instituição bancária.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="toast-feedback" id="copy-toast" role="status" aria-live="polite">
+              ✅ Chave PIX copiada para a área de transferência!
+            </div>
+          </div>
+
+          <!-- Opção 2: Doação de Alimentos Não Perecíveis -->
+          <div class="donation-card">
+            <div class="donation-icon">🌾</div>
+            <h3>Doação de Alimentos</h3>
+            <p>Doações de itens essenciais para a montagem das cestas básicas que são entregues às famílias cadastradas.</p>
+            
+            <div class="needed-items-list">
+              <span class="needed-title">Itens de Maior Necessidade:</span>
+              <ul>
+                <li><span>🍚</span> Arroz, Feijão (Carioca / Preto)</li>
+                <li><span>🌽</span> Flocão de Milho / Farinha de Mandioca</li>
+                <li><span>🍝</span> Macarrão & Molho de Tomate</li>
+                <li><span>🥛</span> Leite em Pó / Açúcar / Café</li>
+                <li><span>🛢️</span> Óleo de Soja / Biscoitos</li>
+                <li><span>🧼</span> Sabonete / Sabão / Creme Dental</li>
+              </ul>
+            </div>
+
+            <div class="dropoff-info">
+              <strong>Pontos de Arrecadação em Queimadas:</strong>
+              <p>Comércio parceiros no Centro e no bairro do <strong>Castanho</strong>. Caso precise que busquemos as doações na sua residência ou comércio, entre em contato pelo formulário abaixo!</p>
+            </div>
+          </div>
+
+          <!-- Opção 3: Doação de Brinquedos & Voluntariado -->
+          <div class="donation-card">
+            <div class="donation-icon">🧸</div>
+            <h3>Brinquedos & Voluntariado</h3>
+            <p>Faça uma criança sorrir com um brinquedo novo ou doe seu tempo e energia para ajudar no dia da grande festa.</p>
+
+            <div class="toy-donation-info">
+              <span class="needed-title">Brinquedos para Sorteio:</span>
+              <p>Aceitamos bolas, bonecas, carrinhos, jogos educativos e brinquedos em bom estado para meninos e meninas de 0 a 12 anos.</p>
+            </div>
+
+            <div class="volunteer-info">
+              <span class="needed-title">Seja um Voluntário:</span>
+              <ul class="volunteer-list">
+                <li>✨ Organização e separação de cestas básicas</li>
+                <li>✨ Apoio na monitoria dos brinquedos infantis</li>
+                <li>✨ Distribuição de algodão doce e lanches</li>
+                <li>✨ Acolhimento e orientação às famílias</li>
+              </ul>
+              <a href="#contato" class="btn btn-secondary btn-block">Quero ser Voluntário</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Contato e Manifestação de Apoio -->
+    <section class="section section-contact" id="contato">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Fale Conosco</span>
+          <h2 class="section-title">Manifeste Seu Interesse em Ajudar</h2>
+          <div class="section-divider">
+            <span>✉️</span>
+          </div>
+          <p class="section-subtitle">
+            Preencha os campos abaixo para combinar a entrega de alimentos, apadrinhar famílias, ser parceiro comercial ou voluntário.
+          </p>
+        </div>
+
+        <div class="contact-card-wrapper">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Seu Nome / Nome da Empresa *</label>
+                <input type="text" id="name" name="name" required placeholder="Ex: Maria Silva ou Mercadinho Central">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefone / WhatsApp *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Ex: (83) 99999-9999">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-mail (Opcional)</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+              </div>
+
+              <div class="form-group">
+                <label for="interest">Como Deseja Colaborar? *</label>
+                <select id="interest" name="interest" required>
+                  <option value="" disabled selected>Selecione uma opção...</option>
+                  <option value="alimentos">Quero doar Alimentos / Cesta Básica</option>
+                  <option value="brinquedos">Quero doar Brinquedos</option>
+                  <option value="financeiro">Quero apoiar financeiramente / Patrocínio Comercial</option>
+                  <option value="rifa">Quero comprar ou ajudar a vender Rifas</option>
+                  <option value="voluntario">Quero ser Voluntário no dia do evento</option>
+                  <option value="duvidas">Tenho dúvidas / Outro assunto</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensagem ou Detalhes da Doação</label>
+              <textarea id="message" name="message" rows="4" placeholder="Conte-nos como deseja participar, se precisa de coleta no seu endereço ou qualquer observação especial..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn">
+              <span>Enviar Manifestação de Apoio</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div class="contact-success-msg" id="contact-success" style="display: none;">
+            <div class="success-icon">🎄❤️</div>
+            <h3>Muito obrigado pelo seu carinho!</h3>
+            <p>Recebemos sua mensagem com sucesso. A coordenação do <strong>Natal Solidário</strong> entrará em contato com você o mais breve possível para alinhar os detalhes.</p>
+            <button class="btn btn-secondary" id="reset-form-btn">Enviar outra mensagem</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Perguntas Frequentes (FAQ) -->
+    <section class="section section-faq" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-kicker">Tire Suas Dúvidas</span>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          <div class="section-divider">
+            <span>❓</span>
+          </div>
+          <p class="section-subtitle">
+            Tudo o que você precisa saber sobre a transparência, organização e funcionamento do Natal Solidário.
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Como são selecionadas as famílias que recebem as cestas?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                O processo é feito com muito critério e respeito. É preenchido um formulário com nome e contato dos moradores 
+                das comunidades atendidas. Em seguida, os organizadores avaliam cada caso diretamente ao ouvir os pedidos, visitar 
+                as moradias e conferir a vulnerabilidade social e quantidade de filhos, assegurando que a ajuda chegue a quem realmente necessita.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Quem não mora em Queimadas pode doar via PIX?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Com certeza! Recebemos doações via PIX de queimadenses que moram fora e de pessoas solidárias de todo o Brasil e do exterior. 
+                Os valores são integralmente investidos na compra de mantimentos faltantes, brinquedos infantis para sorteio e lazer das crianças.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Como são prestadas as contas das doações?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                A transparência é a nossa prioridade número um. Em todas as edições, as entregas das cestas e doações 
+                são amplamente fotografadas e acompanhadas pelos moradores, e veículos de comunicação como o canal 
+                <strong>Queimadas Acontece</strong> realizam a cobertura jornalística completa documentando o impacto gerado.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Como funcionam os sorteios de eletrodomésticos (fogões, geladeiras)?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Quando a arrecadação financeira com rifas, doações da comunidade e fundo próprio supera os custos operacionais da festa 
+                e das cestas básicas, o excedente é revertido na compra de eletrodomésticos essenciais (como fogões novos e geladeiras), 
+                que são sorteados exclusivamente entre as famílias cadastradas que não possuem esses itens em suas casas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Aceitam brinquedos usados ou apenas novos?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Aceitamos brinquedos novos e também seminovos, desde que estejam limpos, completos e em excelente estado de conservação, 
+                garantindo a dignidade e a alegria da criança que irá recebê-lo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>O que motivou a continuidade do projeto após o 'Natal sem Fome' de 2006?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                O Sr. José Joaquim Vieira, ex-funcionário da Emater, viu que a fome e a necessidade não esperam. Quando o movimento de 2006 foi 
+                descontinuado, ele não aceitou ver as famílias desamparadas e incentivou sua filha Mércia Ramos a assumir a liderança em 2009. 
+                Graças a essa união familiar e comunitária, a tradição sobrevive e cresce há mais de uma década e meia.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Festivo e Institucional -->
+  <footer class="main-footer">
+    <div class="footer-decorations" aria-hidden="true">
+      <div class="snow-drift"></div>
+    </div>
+
+    <div class="container footer-container">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand">
+          <img src="docs/logo-natal-solidario.jpeg" alt="Logo Natal Solidário Queimadas" class="footer-logo">
+          <div>
+            <h3>Natal Solidário</h3>
+            <span class="footer-tagline">Queimadas &bull; Paraíba</span>
+          </div>
+        </div>
+        <p class="footer-description">
+          Movimento voluntário comunitário dedicado a transformar o Natal de famílias carentes no Castanho e comunidades rurais com cestas básicas, brinquedos, lazer e dignidade.
+        </p>
+        <div class="footer-founders-note">
+          <span>Incentivado por <strong>José Joaquim Vieira</strong> (ex-EMATER) e liderado com dedicação por <strong>Mércia Ramos</strong> desde 2009.</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação Rápida</h4>
+        <ul class="footer-links">
+          <li><a href="#historia">&rarr; Nossa História</a></li>
+          <li><a href="#como-funciona">&rarr; Critérios de Seleção</a></li>
+          <li><a href="#comunidades">&rarr; Regiões Beneficiadas</a></li>
+          <li><a href="#galeria">&rarr; Galeria de Fotos</a></li>
+          <li><a href="#impacto">&rarr; Calculadora de Impacto</a></li>
+          <li><a href="#como-doar">&rarr; Doações via PIX</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Comunidades Beneficiadas</h4>
+        <ul class="footer-communities">
+          <li>Castanho (Cima e Baixo)</li>
+          <li>Cássio</li>
+          <li>Guritiba</li>
+          <li>Zé Velho</li>
+          <li>Vila & Zumbi</li>
+          <li>Baixa Verde</li>
+          <li>Pedra do Sino</li>
+          <li>Sítio Lutador & Sítio Malhada</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Canais & Apoio</h4>
+        <p class="footer-contact-item">
+          <strong>📍 Localização:</strong> Queimadas - PB
+        </p>
+        <p class="footer-contact-item">
+          <strong>📺 Cobertura Especial:</strong> Canal Queimadas Acontece
+        </p>
+        <p class="footer-contact-item">
+          <strong>💳 Chave PIX:</strong> 83993744640 (Mércia Ramos)
+        </p>
+        <div class="footer-actions">
+          <a href="#como-doar" class="btn btn-primary btn-sm">Doar via PIX</a>
+          <a href="#topo" class="btn btn-secondary btn-sm" aria-label="Voltar ao início">Voltar ao Topo &uarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2009 - 2026 <strong>Natal Solidário de Queimadas - PB</strong>. Todos os direitos reservados.</p>
+        <p class="footer-credit">Feito com ❤️ pelo desenvolvimento e esperança das nossas comunidades rurais.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
